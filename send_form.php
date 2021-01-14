@@ -1,6 +1,6 @@
 <?php 
 //Add here the email where you want to recieve data sent from the form.
-$your_email="your_email@site.com";
+$your_email="riceb53@gmail.com";
 
 $result = '<img src="img/form-icon-error.png"/><br/><span class="title error">Sorry!</span><br/>Your data has not been sent. Please try again.<br /><strong>Error: #AJ002</strong><br /><br /><button class="btn btn-default BtnCloseResult" type="button">Close</button>';
 if(!empty($_POST)){
