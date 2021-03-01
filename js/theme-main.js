@@ -96,13 +96,18 @@ $(document).ready(function() {
 			$('#sendResult').html('<div class="uil-rolling-css"><div><div></div><div></div></div></div>');
 			$.ajax({
 				type: 'POST',
-				url: 'send_form.php',
+				url: 'https://formspree.io/f/mwkwdwke',
 				data: Form.serialize(),
 				success: function(msg){
 					$('#sendResult').html(msg)
+					$('#boxedResult').hide();
+					$('#fullscreenloading').hide();
 				},
 				error: function(){
-					$('#sendResult').html('<img src="img/form-icon-error.png"/><br/><span class="title error">Sorry!</span><br/>Your data has not been sent. Please try again.<br /><strong>Error: #AJ001</strong><br /><br /><button class="btn btn-default BtnCloseResult" type="button">Close</button>');
+					$('#sendResult').html(msg)
+					$('#boxedResult').hide();
+					$('#fullscreenloading').hide();
+					// $('#sendResult').html('<img src="img/form-icon-error.png"/><br/><span class="title error">Sorry!</span><br/>Your data has not been sent. Please try again.<br /><strong>Error: #AJ001</strong><br /><br /><button class="btn btn-default BtnCloseResult" type="button">Close</button>');
 				}
 			});
 		}
