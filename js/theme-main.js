@@ -104,7 +104,7 @@ $(document).ready(function() {
 					$('#fullscreenloading').hide();
 				},
 				error: function(){
-					$('#sendResult').html(msg)
+					$('#sendResult').html()
 					$('#boxedResult').hide();
 					$('#fullscreenloading').hide();
 					// $('#sendResult').html('<img src="img/form-icon-error.png"/><br/><span class="title error">Sorry!</span><br/>Your data has not been sent. Please try again.<br /><strong>Error: #AJ001</strong><br /><br /><button class="btn btn-default BtnCloseResult" type="button">Close</button>');
