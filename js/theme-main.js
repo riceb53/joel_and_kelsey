@@ -88,7 +88,47 @@ $(document).ready(function() {
 	$('#ajaxFormSubmit').on('click',function(){
 		var Form = $('#ajaxForm');
 		var hasErrors = Form.validator('validate').has('.has-error').length
-		if (hasErrors){
+		var values = {}
+		Form.serializeArray().forEach(function(input) {
+			values[input.name] = input.value
+		})
+		var errors = [];
+		
+		var pescatarians = parseInt(values['number_pescatarian']);
+		var vegans = parseInt(values['number_vegan']);
+		var vegetarians = parseInt(values['number_vegetarian']);
+		var totalWeirdFoodPeople = pescatarians + vegans + vegetarians;
+		var totalGuests = parseInt(values['guests']);
+
+		
+		if (values['name'].length < 1) {
+			errors.push("name too short");
+			// find the input box add some red text and tell them
+			
+		} 
+		if (values['email'].length < 1 || !values['email'].includes("@")) {
+			errors.push("email not correct")
+		}
+		if (!values["accomodations"]) {
+			// debugger
+			errors.push("select accomodations")
+			$('#accomodations').addClass("red-border");
+			
+		} 
+		debugger;
+		if (totalGuests && totalGuests <= totalWeirdFoodPeople) {
+			errors.push("please ensure that the number of vegans + pescatarians + vegetarians does not exceed the number of guests")
+			$('#foodChoices').addClass("red-border");
+			$('#foodErrors').html("<ul class=\"list-unstyled\"><li>Number of dietary choices cannot exceed number of guests.</li></ul>");
+
+			
+		}
+		// check that name and email are filled in
+		
+		// ensure that they choose one of the accomodation/food options
+		// check that they don't put too many people for pescatarian/vegetarian
+		
+		if (errors.length > 0 || hasErrors > 0){
 			
 		}else{
 			$('#fullscreenloading').show();
@@ -110,6 +150,11 @@ $(document).ready(function() {
 					// $('#sendResult').html('<img src="img/form-icon-error.png"/><br/><span class="title error">Sorry!</span><br/>Your data has not been sent. Please try again.<br /><strong>Error: #AJ001</strong><br /><br /><button class="btn btn-default BtnCloseResult" type="button">Close</button>');
 				}
 			});
+			$('#accomodations').removeClass("red-border");
+			$('#foodChoices').removeClass("red-border");
+			$('#foodErrors').html("");
+			// clear out the form
+			
 		}
 	});
 	$(document).on('click', '.BtnCloseResult', function () {

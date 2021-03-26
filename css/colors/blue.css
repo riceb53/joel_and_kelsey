@@ -56,3 +56,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, .txt-color-1,.navbar-defau
 a,a:hover{
 	color: #748392;
 }
+
+
+.red-border {
+	border: 2px solid #a94442;
+	/* background-color: red; */
+}
