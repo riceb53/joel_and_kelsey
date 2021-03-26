@@ -96,7 +96,7 @@ $(document).ready(function() {
 			$('#sendResult').html('<div class="uil-rolling-css"><div><div></div><div></div></div></div>');
 			$.ajax({
 				type: 'POST',
-				url: 'https://formspree.io/f/mwkwdwke',
+				url: '/',
 				data: Form.serialize(),
 				success: function(msg){
 					$('#sendResult').html(msg)
