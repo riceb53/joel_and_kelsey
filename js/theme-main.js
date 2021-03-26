@@ -110,12 +110,12 @@ $(document).ready(function() {
 			errors.push("email not correct")
 		}
 		if (!values["accomodations"]) {
-			// debugger
+			
 			errors.push("select accomodations")
 			$('#accomodations').addClass("red-border");
 			
 		} 
-		debugger;
+		
 		if (totalGuests && totalGuests <= totalWeirdFoodPeople) {
 			errors.push("please ensure that the number of vegans + pescatarians + vegetarians does not exceed the number of guests")
 			$('#foodChoices').addClass("red-border");
@@ -154,7 +154,8 @@ $(document).ready(function() {
 			$('#foodChoices').removeClass("red-border");
 			$('#foodErrors').html("");
 			// clear out the form
-			
+
+			window.location.reload()
 		}
 	});
 	$(document).on('click', '.BtnCloseResult', function () {
