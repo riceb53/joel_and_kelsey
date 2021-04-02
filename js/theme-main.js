@@ -11,6 +11,9 @@
 
 "use strict";
 $(document).ready(function() {
+	// $('#myModal').on('shown.bs.modal', function () {
+	// 	$('#myInput').trigger('focus')
+	// })
 
 	/*==============================
 		1. Nav - Sticky
@@ -155,7 +158,9 @@ $(document).ready(function() {
 			$('#foodErrors').html("");
 			// clear out the form
 
-			window.location.reload()
+			// open modal, when modal closes thank them for their submission
+			$('#exampleModal').modal()  
+			// window.location.reload()
 		}
 	});
 	$(document).on('click', '.BtnCloseResult', function () {
