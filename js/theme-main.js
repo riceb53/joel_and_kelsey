@@ -112,19 +112,16 @@ $(document).ready(function() {
 		if (values['email'].length < 1 || !values['email'].includes("@")) {
 			errors.push("email not correct")
 		}
-		if (!values["accomodations"]) {
-			
+		if (!values["accomodations"] && values['guests'] !== "Apologies") {			
 			errors.push("select accomodations")
-			$('#accomodations').addClass("red-border");
-			
-		} 
+			$('#accomodations').addClass("red-border");			
+			$('#accomodationsErrors').html("<ul class=\"list-unstyled\"><li style=\"color: #a94442\">Please select one of the above.</li></ul>");
+		}
 		
 		if (totalGuests && totalGuests <= totalWeirdFoodPeople) {
 			errors.push("please ensure that the number of vegans + pescatarians + vegetarians does not exceed the number of guests")
 			$('#foodChoices').addClass("red-border");
 			$('#foodErrors').html("<ul class=\"list-unstyled\"><li style=\"color: #a94442\">Number of dietary choices cannot exceed number of guests.</li></ul>");
-
-			
 		}
 		// check that name and email are filled in
 		
@@ -163,6 +160,14 @@ $(document).ready(function() {
 			// window.location.reload()
 		}
 	});
+	
+	$("#closeModal").on('click', function() {
+		console.log('closed modal');
+		$('#exampleModal').modal('hide')  
+		window.location.reload();
+
+	})
+	
 	$(document).on('click', '.BtnCloseResult', function () {
 		$('#boxedResult').hide();
 		$('#fullscreenloading').hide();

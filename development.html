@@ -308,7 +308,11 @@
                 </div>
             </div>
             <div class="row gallery-popup">
-
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
+                    <a href="img/4.jpg" class="mfp-image" title="Gallery image title">
+                        <img src="img/4.jpg" class="img-responsive" alt="Gallery image">
+                    </a>
+                </div>
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
 	                <a href="img/1.jpg" class="mfp-image" title="Gallery image title">
 	                	<img src="img/1.jpg" class="img-responsive" alt="Gallery image">
@@ -325,12 +329,7 @@
 	                </a>
 	            </div>
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
-	                <a href="img/4.jpg" class="mfp-image" title="Gallery image title">
-	                	<img src="img/4.jpg" class="img-responsive" alt="Gallery image">
-	                </a>
-	            </div>
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
-	                <a href="img/5.jpg" class="mfp-image" title="Gallery image title">
+                    <a href="img/5.jpg" class="mfp-image" title="Gallery image title">
 	                	<img src="img/5.jpg" class="img-responsive" alt="Gallery image">
 	                </a>
 	            </div>
@@ -340,7 +339,7 @@
 	                </a>
 	            </div>
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
-	                <a href="img/7.jpg" class="mfp-image" title="Gallery image title">
+                    <a href="img/7.jpg" class="mfp-image" title="Gallery image title">
 	                	<img src="img/7.jpg" class="img-responsive" alt="Gallery image">
 	                </a>
 	            </div>
@@ -350,7 +349,7 @@
 	                </a>
 	            </div>
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
-	                <a href="img/9.jpg" class="mfp-image" title="Gallery image title">
+                    <a href="img/9.jpg" class="mfp-image" title="Gallery image title">
 	                	<img src="img/9.jpg" class="img-responsive" alt="Gallery image">
 	                </a>
 	            </div>                
@@ -364,21 +363,24 @@
                         <img src="img/12.jpg" class="img-responsive" alt="Gallery image">
                     </a>
                 </div>
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
-                    <a href="img/10.jpg" class="mfp-image" title="Gallery image title">
-                        <img src="img/10.jpg" class="img-responsive" alt="Gallery image">
-                    </a>
-                </div>
+                
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
                     <a href="img/13.jpg" class="mfp-image" title="Gallery image title">
                         <img src="img/13.jpg" class="img-responsive" alt="Gallery image">
                     </a>
-                </div>
+                </div> 
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
+                    <a href="img/10.jpg" class="mfp-image" title="Gallery image title">
+                        <img src="img/10.jpg" class="img-responsive" alt="Gallery image">
+                    </a>
+                </div> 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
                     <a href="img/14.jpg" class="mfp-image" title="Gallery image title">
                         <img src="img/14.jpg" class="img-responsive" alt="Gallery image">
                     </a>
                 </div>
+
+                <!-- END OF CURRENT PICTURES -->
 	            <!-- <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter gallery-family gallery-friends">
 	                <a href="img/joel_focused.jpg" class="mfp-image" title="Gallery image title">
 	                	<img src="img/joel_focused.jpg" class="img-responsive" alt="Gallery image">
@@ -920,22 +922,22 @@
                         <br />
                         <div class="row bot-mrg-20 form-group" id="accomodations">
 			                <div class="col-md-4 text-center">
-                                <input type="radio" id="checkbox-1" name="accomodations" value="Accomodation and Food" required>
+                                <input type="radio" id="checkbox-1" name="accomodations" value="Accomodation and Food">
                                 <label for="checkbox-1" class="checkbox-button"> Accomodation</label>
                                 
                                 <p> and food at camp ($125/person)</p>
                             </div>
                             <div class="col-md-4 text-center">
-                                <input type="radio" id="checkbox-2" name="accomodations" value="Only Food" required>
+                                <input type="radio" id="checkbox-2" name="accomodations" value="Only Food">
                                 <label for="checkbox-2" class="checkbox-button">Only Food</label>
                                 <p>at camp ($50/person)</p>
                             </div>
                             <div class="col-md-4 text-center">
-                                <input type="radio" id="checkbox-3" name="accomodations" value="Only Ceremony" required>
+                                <input type="radio" id="checkbox-3" name="accomodations" value="Only Ceremony">
                                 <label for="checkbox-3" class="checkbox-button"> Only ceremony</label>
                                 <p> and reception</p>
                             </div>
-                            <div class="help-block with-errors accomodations"></div>
+                            <div class="help-block with-errors accomodations" id="accomodationsErrors"></div>                            
 			            </div>
                         <div class="row bot-mrg-20 form-group" id="foodChoices">
 			                <div class="col-md-4 text-center">
@@ -1018,7 +1020,7 @@
                         </div>
                         
                     </form>
-                    <input type="hidden" name="form-name" value="rsvp" />
+                    <!-- <input type="hidden" name="form-name" value="rsvp" /> -->
                     <button class="btn btn-primary btn-lg" id="ajaxFormSubmit">I´m Attending</button>
             	</div>
             </div>
@@ -1060,11 +1062,11 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="color: #748392">
             Thank you for your RSVP
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="closeModal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>
