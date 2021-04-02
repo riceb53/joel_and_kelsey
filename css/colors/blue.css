@@ -24,7 +24,7 @@ a:hover{
 	color:#748392;
 }
 .date span{
-	border-bottom:solid 2px #748392;
+	/* border-bottom:solid 2px #748392; */
 }
 .title span{
 	border-color: #748392 -moz-use-text-color -moz-use-text-color;
