@@ -118,7 +118,7 @@ $(document).ready(function() {
 			$('#accomodationsErrors').html("<ul class=\"list-unstyled\"><li style=\"color: #a94442\">Please select one of the above.</li></ul>");
 		}
 		
-		if (totalGuests && totalGuests <= totalWeirdFoodPeople) {
+		if (totalGuests && totalGuests < totalWeirdFoodPeople) {			
 			errors.push("please ensure that the number of vegans + pescatarians + vegetarians does not exceed the number of guests")
 			$('#foodChoices').addClass("red-border");
 			$('#foodErrors').html("<ul class=\"list-unstyled\"><li style=\"color: #a94442\">Number of dietary choices cannot exceed number of guests.</li></ul>");
